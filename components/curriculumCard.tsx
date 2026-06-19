@@ -18,15 +18,15 @@ export default function FeatureCard({
   image,
 }: FeatureCardProps) {
   return (
-    <Card className="w-90 h-auto border-white/10 bg-white/5 backdrop-blur-sm py-4">
+    <Card className="feature-card w-90 h-auto border-white/10 bg-white/5 backdrop-blur-sm py-4">
       <div className="flex justify-center items-center h-10 w-12 rounded-md bg-green-300/10 ml-4">
         <Image
           src={image}
-          alt={"image"}
-          width="20"
-          height="20"
+          alt={"title"}
+          width={20}
+          height={20}
         />
-      </div> 
+      </div>
 
       <CardHeader>
         <CardTitle className="font-satoshi text-lg text-black font-bold">
