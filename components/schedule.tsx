@@ -61,7 +61,7 @@ useEffect(() => {
                 <p className="md:text-base text-sm font-inter font-regular text-gray-500 md:w-100 mt-5 md:mt-0">Três fases cuidadosamente estruturadas te levam de iniciante a desenvolvedor front-end pronto para o mercado de trabalho, com cada fase se apoiando na anterior.</p>
             </div>
 
-            <div className="grid md:grid-cols-3 grid-cols-1 gap-3 mt-15">
+            <div className="grid md:grid-cols-3 grid-cols-1 gap-3 mt-15 justify-items-center">
                 <div className="schedule-cardl-eft">
                     <ScheduleCard 
                         title="Fundamentos"

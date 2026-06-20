@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 
 import CourseInfoItem from "@/components/courseInfoItem";
+import PricingCard from "@/components/cardPrice";
 
 export default function Enrollment() {
     return (
@@ -37,6 +38,8 @@ export default function Enrollment() {
                         value="12 Semanas (2h por dia)"
                     />
                 </div>
+
+                <PricingCard />
             </div>
 
             <EnrollmentForm />
