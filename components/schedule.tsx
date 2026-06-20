@@ -51,7 +51,7 @@ useEffect(() => {
 }, []);
 
     return (
-        <section ref={sectionRef} id="cronograma" className="flex flex-col bg-pink-300/20 mt-20 px-6">
+        <section ref={sectionRef} id="cronograma" className="flex flex-col bg-pink-300/20 mt-20 px-6 pb-10">
             <div className="w-30 h-10 rounded-full bg-orange-300/10 flex items-center justify-center p-4 mt-10">
                 <p className="text-sm text-orange-500 font-inter font-medium">Cronograma</p>
             </div>

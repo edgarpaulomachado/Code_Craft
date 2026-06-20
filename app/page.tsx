@@ -2,6 +2,7 @@ import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Curriculum from "@/components/exploreCurriculum";
 import Schedule from "@/components/schedule";
+import Enrollment from "@/components/enrollment";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <Curriculum />
       <Schedule />
+      <Enrollment />
     </>
   );
 }
