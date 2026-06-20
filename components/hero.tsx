@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Images } from "@/assets/images";
 import { Button } from "./ui/button";
 import Countdown from "./countDown";
+import { ChevronDown } from "lucide-react";
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -65,11 +66,32 @@ export default function Hero() {
             ease: "power3.out",
           },
           "-=0.3"
+        )
+        .from(
+            ".hero-scroll",
+            {
+              opacity: 0,
+              y: -20,
+              duration: 0.6,
+              ease: "power3.out",
+            },
+            "-=0.2"
         );
     }, heroRef);
 
     return () => ctx.revert();
   }, []);
+
+  const scrollToContent = () => {
+  const section = document.getElementById("conteudo");
+
+  if (section) {
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
 
   return (
     <section ref={heroRef} className="relative h-screen">
@@ -111,7 +133,7 @@ export default function Hero() {
             variant="ghost"
             className="h-14 rounded-full text-sm font-inter font-medium cursor-pointer text-white border border-gray-300"
           >
-            Explorar Conteúdo
+            <a href="#conteudo">Explorar Conteúdo</a>
           </Button>
         </div>
 
@@ -123,6 +145,15 @@ export default function Hero() {
           Data de encerramento de vagas: 28, Junho
         </p>
       </div>
+
+      <button onClick={scrollToContent} className="hero-scroll absolute bottom-2 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center text-white cursor-pointer group">
+            <div className="animate-bounce">
+                <ChevronDown
+                size={32}
+                className="group-hover:text-orange-500 transition-colors"
+                />
+            </div>
+        </button>
     </section>
   );
 }
