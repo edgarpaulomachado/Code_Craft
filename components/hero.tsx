@@ -146,7 +146,7 @@ export default function Hero() {
         </p>
       </div>
 
-      <button onClick={scrollToContent} className="hero-scroll absolute bottom-2 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center text-white cursor-pointer group">
+      <button onClick={scrollToContent} className="hero-scroll absolute md:bottom-2 bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center text-white cursor-pointer group">
             <div className="animate-bounce">
                 <ChevronDown
                 size={32}
