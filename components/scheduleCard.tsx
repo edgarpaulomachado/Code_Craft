@@ -19,7 +19,7 @@ interface ScheduleCardProps {
 
 export default function ScheduleCard({title, description, week, image, highlighted = false, topics}: ScheduleCardProps) {
     return(
-        <Card className={`w-105 h-auto backdrop-blur-sm pb-4 pt-0 transition-all duration-300 ${
+        <Card className={`md:w-105 w-92 h-auto backdrop-blur-sm pb-4 pt-0 transition-all duration-300 ${
             highlighted
             ? "bg-cyan-950 text-white"
             : "bg-white border-white/10"
