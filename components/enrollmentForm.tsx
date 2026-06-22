@@ -23,8 +23,8 @@ import { useState } from "react";
 
 
 export default function EnrollmentForm() {
-  
-  const [experience, setExperience] = useState("");
+
+ const [experience, setExperience] = useState<string | null>(null);
 
 
   return (
@@ -88,7 +88,7 @@ export default function EnrollmentForm() {
             <input
               type="hidden"
               name="experience"
-              value={experience}
+              value={experience ?? ""}
             />
 
             <FieldDescription>
