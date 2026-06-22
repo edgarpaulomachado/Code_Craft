@@ -18,7 +18,15 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import { submitEnrollment } from "@/app/actions/enrollment";
+import { useState } from "react";
+
+
 export default function EnrollmentForm() {
+  
+  const [experience, setExperience] = useState("");
+
+
   return (
     <section className="flex justify-center px-4 py-20">
       <div className="w-full max-w-2xl rounded-3xl border border-gray-200 bg-pink-300/5 p-8">
@@ -33,11 +41,12 @@ export default function EnrollmentForm() {
           </p>
         </div>
 
-        <form className="space-y-6">
+        <form action={submitEnrollment} className="space-y-6">
           <Field>
             <FieldLabel>Nome Completo</FieldLabel>
 
             <Input
+              name="name"
               type="text"
               placeholder="Digite o seu nome completo"
             />
@@ -47,6 +56,7 @@ export default function EnrollmentForm() {
             <FieldLabel>Email</FieldLabel>
 
             <Input
+              name="email"
               type="email"
               placeholder="Digite o seu email"
             />
@@ -55,7 +65,7 @@ export default function EnrollmentForm() {
           <Field>
             <FieldLabel>Nível de Experiência</FieldLabel>
 
-            <Select>
+            <Select onValueChange={setExperience}>
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Selecione o seu nível" />
               </SelectTrigger>
@@ -75,6 +85,12 @@ export default function EnrollmentForm() {
               </SelectContent>
             </Select>
 
+            <input
+              type="hidden"
+              name="experience"
+              value={experience}
+            />
+
             <FieldDescription>
               Escolha o nível que melhor representa os seus conhecimentos atuais.
             </FieldDescription>
@@ -86,6 +102,7 @@ export default function EnrollmentForm() {
             </FieldLabel>
 
             <Textarea
+              name="motivation"
               placeholder="Conte-nos um pouco sobre os seus objetivos..."
               className="min-h-32 resize-none"
             />
